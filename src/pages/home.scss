@@ -1,0 +1,326 @@
+@import "../shared/helper";
+
+.home {
+  flex: 1;
+  width: px(2420);
+  display: flex;
+  flex-direction: column;
+  background: #010310;
+  color: white;
+
+  >header {
+    width: px(2420);
+    height: px(99);
+    background-size: cover;
+    margin: 0 auto;
+  }
+
+  >main {
+    width: px(2420);
+    margin: 0 auto;
+    padding-top: px(30);
+    flex: 1;
+    display: grid;
+    grid-template:
+      "a b d e" 755fr
+      "c c d e" 363fr / 366fr 748fr 811fr 747fr;
+    grid-column-gap: px(28);
+    grid-row-gap: px(28);
+
+    section {
+      text-align: center;
+    }
+
+    .bordered {
+      border: 1px solid #0f3362;
+      border-radius: 4px;
+      position: relative;
+      background: #0c1139;
+      box-shadow: 0 0 2px 0 #0f3361, inset 0 0 2px 0 #0f3361;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        border-radius: 4px;
+        box-shadow:
+          -17px 0 0 -16px #0f3361,
+          0 17px 0 -16px #0f3361,
+          0 21px 0 -20px #0f3361,
+          0 -17px 0 -16px #0f3361,
+          9px 0 0 -8px #0d4483,
+          -9px 0 0 -8px #0d4483,
+          0 9px 0 -80px #0d4483,
+          0 -9px 0 -8px #0d4483, ;
+      }
+    }
+
+    >.section1 {
+      grid-area: a;
+      display:flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    >.section2 {
+      grid-area: b;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    >.section3 {
+      grid-area: c;
+
+    }
+
+    >.section4 {
+      grid-area: d;
+
+    }
+
+    >.section5 {
+      grid-area: e;
+    }
+
+    .管辖统计,
+    .破案排名,
+    .发案趋势,
+    .案发时段,
+    .成果,
+    .籍贯,
+    .年龄,
+    .案发类型,
+    .案发街道,
+    .作案手段{
+      height: px(315);
+      display: flex;
+      flex-direction: column;
+
+      h2 {
+        flex-shrink: 0;
+        border: 1px solid #0a5299;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+        font-size: px(22);
+        line-height: px(24);
+        padding: px(10) px(4);
+        text-shadow: 0 0 px(3) white;
+      }
+
+      .chart {
+        flex: 1;
+        width: 100%;
+
+      }
+    }
+
+    .破案排名 {
+      height: px(423);
+
+      >.legend {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 0 px(20) px(10);
+
+        >.first,
+        >.second {
+          display: inline-block;
+          width: px(18);
+          height: px(12);
+          background: red;
+          margin: 0 px(10)
+        }
+
+        >.first {
+          background: linear-gradient(90deg, #2034f9 0%, #04a1ff 100%);
+        }
+
+        >.second {
+          background: linear-gradient(90deg, #b92ae8 0%, #6773e7 100%);
+        }
+      }
+    }
+
+    .案发时段 {
+      height: px(363)
+    }
+
+    .成果{
+      padding:0 px(10);
+      >table {
+        margin-top: px(38);
+        border-collapse: collapse;
+        th,
+        td {
+          border: 1px solid #1a3671;
+          font-size: px(12);
+        }
+
+        thead {
+          th {
+            height: px(70);
+            box-shadow: inset 0 0 px(60) 0 #1f3d85;
+          }
+        }
+
+        tbody {
+          td {
+            height: px(60);
+            width: px(114);
+            background: #1c2456;
+          }
+        }
+      }
+    }
+    .作案手段{
+      padding:0 px(10);
+      >table {
+        margin-top: px(38);
+        border-collapse: collapse;
+        th,
+        td {
+          border: 1px solid #1a3671;
+          font-size: px(12);
+        }
+        thead {
+          th {
+            height: px(35);
+            box-shadow: inset 0 0 px(25) 0 #1f3d85;
+          }
+        }
+
+        tbody {
+          td {
+            height: px(30);
+            width: px(145);
+            background: #1c2456;
+          }
+        }
+      }
+    }
+    .籍贯 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: px(753);
+      background: transparent;
+      .wrapper {
+        position: relative;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        width: 100%;
+        flex-direction: column;
+        .chart {
+          flex: 1;
+          
+        }
+        .legend {
+          position: absolute;
+          display: flex;
+          align-items: center;
+          font-size: px(18);
+          top: px(40);
+          left: px(20);
+          padding: px(20) px(10) px(20) 0;
+
+          .icon {
+            display: inline-block;
+            margin: 0 px(10);
+            width: px(16);
+            height: px(16);
+            background: #1cecd9;
+            border-radius: 50%;
+          }
+        }
+        .notes {
+          position: absolute;
+          bottom: px(10);
+          font-size: px(15);
+         
+        }
+      }
+    }
+    
+    .年龄{
+      height:px(363);
+      display:flex;
+      flex-direction: column;
+      .charts{
+        flex:1;
+        width:100%;
+        display: flex;
+        flex-direction: row;
+        padding: px(30);
+      }
+      &-图1,&-图2,&-图3{
+        flex:1;
+        display: flex;
+        flex-direction: column;
+        h3{
+          font-size: px(14);
+        }
+      }
+      &-图1,&-图2{
+        .legend{height:px(40);display:flex;align-items: center;justify-content: center;
+          font-size: px(8);
+        >span{display:inline-block;width: px(40);height: px(20);border-radius: px(4);margin: 0 px(10);}
+        .male{background:#33a4fa;}
+        .female {background: #8d70f8;}
+        }
+        .chart{
+          position: relative;
+          flex:1;
+          display: flex;
+          >.main{
+            flex:1;
+          }
+          >.text{
+            position: absolute;top:50%;left:50%;transform: translate(-50%,-50%);
+            color: #33a4fa;font-size: px(20);text-shadow: 0 0 px(20) #33a4fa; font-weight: bold;
+          }
+        }
+      }
+      &-图2{
+        width:px(290);
+        .legend {
+          justify-content: flex-start;
+        }
+      }
+     
+    }
+
+  }
+  .案发类型,.案发街道{
+    >.charts{
+ 
+      flex:1;
+      display:flex;
+      >.chart{
+        padding-top: px(15);
+        >.main{
+          flex:1;
+        }
+        flex:1;
+      }
+    }
+  }
+  footer {
+    height: px(68);
+    background-size: cover;
+    border: 1px solid #0d2d59;
+    margin: px(20) 0 1px;
+    border-radius: 4px;
+    background: #0c0d2b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+}
